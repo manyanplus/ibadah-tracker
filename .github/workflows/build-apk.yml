@@ -22,14 +22,14 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+          cache: 'gradle'
 
       - name: Set up Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
+          cache-dependency-path: ibadah-tracker/package-lock.json
 
       - name: Install dependencies & Build assets
         working-directory: ./ibadah-tracker
